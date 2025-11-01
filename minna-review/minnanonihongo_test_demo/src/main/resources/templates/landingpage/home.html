@@ -1,0 +1,641 @@
+<!DOCTYPE HMTL>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi"></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neko Nihongo - Brand Style Guide 🐱</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #FFF5F7 0%, #F0F9FF 100%);
+            color: #6B6B6B;
+            padding: 40px 20px;
+            min-height: 100%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(246, 215, 231, 0.3);
+        }
+        
+        .header h1 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 48px;
+            color: #F6A5C0;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #9B9B9B;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 16px rgba(198, 247, 226, 0.2);
+        }
+        
+        .section-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 28px;
+            color: #F6A5C0;
+            margin-bottom: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .color-card {
+            text-align: center;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 120px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .color-swatch:hover {
+            transform: translateY(-4px);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #6B6B6B;
+            margin-bottom: 4px;
+        }
+        
+        .color-hex {
+            font-size: 14px;
+            color: #9B9B9B;
+            font-family: monospace;
+        }
+        
+        .typography-example {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: #FFFBF5;
+            border-radius: 16px;
+            border: 2px dashed #F6D7E7;
+        }
+        
+        .font-display {
+            margin-bottom: 8px;
+        }
+        
+        .font-meta {
+            font-size: 14px;
+            color: #9B9B9B;
+            margin-bottom: 16px;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 24px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: #F6D7E7;
+            color: #6B6B6B;
+        }
+        
+        .btn-primary:hover {
+            background: #FCEAF3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(246, 215, 231, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #C6F7E2;
+            color: #6B6B6B;
+        }
+        
+        .btn-secondary:hover {
+            background: #DFFCF0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(198, 247, 226, 0.4);
+        }
+        
+        .btn-disabled {
+            background: #EAEAEA;
+            color: #B8B8B8;
+            cursor: not-allowed;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .card {
+            background: #FFFBF5;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 8px 20px rgba(246, 215, 231, 0.25);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .card-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 20px;
+            color: #F6A5C0;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .card-text {
+            color: #9B9B9B;
+            line-height: 1.6;
+        }
+        
+        .mascot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+        
+        .mascot-card {
+            padding: 24px;
+            background: linear-gradient(135deg, #FFF5F7 0%, #F0F9FF 100%);
+            border-radius: 20px;
+        }
+        
+        .mascot-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
+        }
+        
+        .mascot-name {
+            font-weight: 600;
+            color: #F6A5C0;
+            margin-bottom: 8px;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .icon-item {
+            padding: 20px;
+            background: #FFFBF5;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .icon-item svg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .icon-label {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #9B9B9B;
+        }
+        
+        .background-pattern {
+            height: 200px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pattern-paws {
+            background: #FFF5F7;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #F6D7E7 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, #C6F7E2 2px, transparent 2px),
+                radial-gradient(circle at 40% 80%, #F6D7E7 2px, transparent 2px),
+                radial-gradient(circle at 60% 20%, #C6F7E2 2px, transparent 2px);
+            background-size: 100px 100px;
+        }
+        
+        .pattern-sakura {
+            background: linear-gradient(135deg, #FFFBF5 0%, #FFF5F7 100%);
+        }
+        
+        .sakura {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 8s infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(220px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .pattern-label {
+            text-align: center;
+            font-weight: 600;
+            color: #9B9B9B;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .section {
+                padding: 24px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐱 Neko Nihongo</h1>
+            <p>Brand Style Guide - Kawaii Japanese Learning Experience</p>
+        </div>
+        
+        <!-- Color Palette -->
+        <div class="section">
+            <h2 class="section-title">🎨 Color Palette</h2>
+            <div class="color-palette">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #F6D7E7;"></div>
+                    <div class="color-name">Pastel Pink</div>
+                    <div class="color-hex">#F6D7E7</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #C6F7E2;"></div>
+                    <div class="color-name">Mint Green</div>
+                    <div class="color-hex">#C6F7E2</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FFFBF5;"></div>
+                    <div class="color-name">Cream White</div>
+                    <div class="color-hex">#FFFBF5</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #F5E6D3;"></div>
+                    <div class="color-name">Light Beige</div>
+                    <div class="color-hex">#F5E6D3</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #6B6B6B;"></div>
+                    <div class="color-name">Warm Gray</div>
+                    <div class="color-hex">#6B6B6B</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typography -->
+        <div class="section">
+            <h2 class="section-title">✍️ Typography System</h2>
+            
+            <div class="typography-example">
+                <div class="font-display" style="font-family: 'Noto Sans JP', sans-serif; font-size: 36px; font-weight: 700; color: #F6A5C0;">
+                    日本語を学ぼう！
+                </div>
+                <div class="font-meta">Noto Sans JP - Bold 700 - 36px - Headings (Japanese)</div>
+            </div>
+            
+            <div class="typography-example">
+                <div class="font-display" style="font-family: 'Fredoka', sans-serif; font-size: 32px; font-weight: 600; color: #F6A5C0;">
+                    Let's Learn Japanese!
+                </div>
+                <div class="font-meta">Fredoka - SemiBold 600 - 32px - Headings (English/Vietnamese)</div>
+            </div>
+            
+            <div class="typography-example">
+                <div class="font-display" style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px; font-weight: 500; color: #6B6B6B;">
+                    こんにちは！ネコ先生と一緒に楽しく日本語を勉強しましょう。
+                </div>
+                <div class="font-meta">Noto Sans JP - Medium 500 - 18px - Body Text (Japanese)</div>
+            </div>
+            
+            <div class="typography-example">
+                <div class="font-display" style="font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 400; color: #6B6B6B;">
+                    Hello! Let's study Japanese together with Neko-sensei in a fun and friendly way.
+                </div>
+                <div class="font-meta">Fredoka - Regular 400 - 16px - Body Text (English/Vietnamese)</div>
+            </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="section">
+            <h2 class="section-title">🔘 Button Styles</h2>
+            <div class="button-grid">
+                <button class="btn btn-primary">Start Lesson 🐱</button>
+                <button class="btn btn-secondary">Practice Quiz 📝</button>
+                <button class="btn btn-disabled">Locked Level 🔒</button>
+            </div>
+        </div>
+        
+        <!-- Cards -->
+        <div class="section">
+            <h2 class="section-title">📦 Card Components</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3 class="card-title">Lesson Card</h3>
+                    <p class="card-text">Hiragana Basics - Learn the foundation of Japanese writing with cute examples and practice exercises.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3 class="card-title">Quiz Card</h3>
+                    <p class="card-text">Daily Challenge - Test your knowledge with fun quizzes and earn fish treats for Neko-sensei!</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Vocabulary Card</h3>
+                    <p class="card-text">New Words - Expand your vocabulary with illustrated flashcards and audio pronunciation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mascots -->
+        <div class="section">
+            <h2 class="section-title">🐾 Neko-sensei Mascot Moods</h2>
+            <div class="mascot-grid">
+                <div class="mascot-card">
+                    <svg class="mascot-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Happy Cat -->
+                        <circle cx="60" cy="60" r="45" fill="#F6D7E7"/>
+                        <!-- Ears -->
+                        <path d="M30 25 L20 10 L40 20 Z" fill="#F6A5C0"/>
+                        <path d="M90 25 L100 10 L80 20 Z" fill="#F6A5C0"/>
+                        <!-- Eyes -->
+                        <circle cx="45" cy="55" r="4" fill="#6B6B6B"/>
+                        <circle cx="75" cy="55" r="4" fill="#6B6B6B"/>
+                        <!-- Happy mouth -->
+                        <path d="M45 70 Q60 80 75 70" stroke="#F6A5C0" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Whiskers -->
+                        <line x1="25" y1="60" x2="40" y2="58" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="25" y1="65" x2="40" y2="65" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="80" y1="58" x2="95" y2="60" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="80" y1="65" x2="95" y2="65" stroke="#6B6B6B" stroke-width="2"/>
+                    </svg>
+                    <div class="mascot-name">Happy Neko</div>
+                    <div class="icon-label">Great job! 頑張って！</div>
+                </div>
+                
+                <div class="mascot-card">
+                    <svg class="mascot-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sleepy Cat -->
+                        <circle cx="60" cy="60" r="45" fill="#C6F7E2"/>
+                        <!-- Ears -->
+                        <path d="M30 25 L20 10 L40 20 Z" fill="#A8E6CF"/>
+                        <path d="M90 25 L100 10 L80 20 Z" fill="#A8E6CF"/>
+                        <!-- Closed eyes -->
+                        <path d="M40 55 Q45 58 50 55" stroke="#6B6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M70 55 Q75 58 80 55" stroke="#6B6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <!-- Sleepy mouth -->
+                        <circle cx="60" cy="72" r="3" fill="#A8E6CF"/>
+                        <!-- Whiskers -->
+                        <line x1="25" y1="60" x2="40" y2="58" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="80" y1="58" x2="95" y2="60" stroke="#6B6B6B" stroke-width="2"/>
+                        <!-- Zzz -->
+                        <text x="85" y="35" font-size="12" fill="#9B9B9B">z</text>
+                        <text x="92" y="28" font-size="10" fill="#9B9B9B">z</text>
+                        <text x="98" y="22" font-size="8" fill="#9B9B9B">z</text>
+                    </svg>
+                    <div class="mascot-name">Sleepy Neko</div>
+                    <div class="icon-label">Rest time! お休み</div>
+                </div>
+                
+                <div class="mascot-card">
+                    <svg class="mascot-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Thinking Cat -->
+                        <circle cx="60" cy="60" r="45" fill="#FFFBF5"/>
+                        <!-- Ears -->
+                        <path d="M30 25 L20 10 L40 20 Z" fill="#F5E6D3"/>
+                        <path d="M90 25 L100 10 L80 20 Z" fill="#F5E6D3"/>
+                        <!-- Eyes looking up -->
+                        <circle cx="43" cy="52" r="4" fill="#6B6B6B"/>
+                        <circle cx="73" cy="52" r="4" fill="#6B6B6B"/>
+                        <!-- Thinking mouth -->
+                        <path d="M50 70 L70 70" stroke="#F5E6D3" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Whiskers -->
+                        <line x1="25" y1="60" x2="40" y2="58" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="25" y1="65" x2="40" y2="65" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="80" y1="58" x2="95" y2="60" stroke="#6B6B6B" stroke-width="2"/>
+                        <line x1="80" y1="65" x2="95" y2="65" stroke="#6B6B6B" stroke-width="2"/>
+                        <!-- Thought bubble -->
+                        <circle cx="95" cy="30" r="8" fill="white" stroke="#F5E6D3" stroke-width="2"/>
+                        <circle cx="88" cy="38" r="4" fill="white" stroke="#F5E6D3" stroke-width="2"/>
+                    </svg>
+                    <div class="mascot-name">Thinking Neko</div>
+                    <div class="icon-label">Hmm... 考えて</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Icons -->
+        <div class="section">
+            <h2 class="section-title">🎨 Icon Set</h2>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Paw -->
+                        <ellipse cx="24" cy="32" rx="10" ry="8" fill="#F6D7E7"/>
+                        <circle cx="16" cy="20" r="4" fill="#F6D7E7"/>
+                        <circle cx="24" cy="18" r="4" fill="#F6D7E7"/>
+                        <circle cx="32" cy="20" r="4" fill="#F6D7E7"/>
+                    </svg>
+                    <div class="icon-label">Paw</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Fish -->
+                        <ellipse cx="28" cy="24" rx="14" ry="8" fill="#C6F7E2"/>
+                        <path d="M14 24 L8 20 L8 28 Z" fill="#C6F7E2"/>
+                        <path d="M38 18 L42 24 L38 30" stroke="#A8E6CF" stroke-width="2" fill="none"/>
+                        <circle cx="34" cy="22" r="2" fill="#6B6B6B"/>
+                    </svg>
+                    <div class="icon-label">Fish</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Book -->
+                        <rect x="12" y="10" width="24" height="28" rx="2" fill="#FFFBF5" stroke="#F6D7E7" stroke-width="2"/>
+                        <line x1="24" y1="10" x2="24" y2="38" stroke="#F6D7E7" stroke-width="2"/>
+                        <line x1="16" y1="18" x2="21" y2="18" stroke="#F6A5C0" stroke-width="2"/>
+                        <line x1="16" y1="24" x2="21" y2="24" stroke="#F6A5C0" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-label">Book</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sakura -->
+                        <circle cx="24" cy="24" r="3" fill="#F6A5C0"/>
+                        <ellipse cx="24" cy="14" rx="4" ry="6" fill="#F6D7E7"/>
+                        <ellipse cx="34" cy="24" rx="6" ry="4" fill="#F6D7E7"/>
+                        <ellipse cx="24" cy="34" rx="4" ry="6" fill="#F6D7E7"/>
+                        <ellipse cx="14" cy="24" rx="6" ry="4" fill="#F6D7E7"/>
+                        <ellipse cx="30" cy="18" rx="5" ry="4" fill="#F6D7E7" transform="rotate(45 30 18)"/>
+                    </svg>
+                    <div class="icon-label">Sakura</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Torii Gate -->
+                        <rect x="10" y="12" width="3" height="24" fill="#F6A5C0"/>
+                        <rect x="35" y="12" width="3" height="24" fill="#F6A5C0"/>
+                        <rect x="8" y="12" width="32" height="4" rx="1" fill="#F6A5C0"/>
+                        <rect x="6" y="8" width="36" height="3" rx="1" fill="#F6A5C0"/>
+                        <rect x="12" y="22" width="24" height="2" fill="#F6A5C0"/>
+                    </svg>
+                    <div class="icon-label">Torii</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Mount Fuji -->
+                        <path d="M24 10 L38 36 L10 36 Z" fill="#C6F7E2"/>
+                        <path d="M24 10 L28 20 L20 20 Z" fill="white"/>
+                        <circle cx="36" cy="16" r="4" fill="#FFFBF5" opacity="0.7"/>
+                    </svg>
+                    <div class="icon-label">Fuji-san</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Patterns -->
+        <div class="section">
+            <h2 class="section-title">🌸 Background Textures</h2>
+            <div class="background-pattern pattern-paws"></div>
+            <div class="pattern-label">Subtle Paw Pattern</div>
+            
+            <div class="background-pattern pattern-sakura" id="sakuraPattern"></div>
+            <div class="pattern-label">Floating Sakura Petals</div>
+        </div>
+        
+        <!-- UI Personality -->
+        <div class="section">
+            <h2 class="section-title">🧁 UI Personality Guidelines</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">💕</div>
+                    <h3 class="card-title">Encouraging</h3>
+                    <p class="card-text">Every interaction celebrates progress with positive reinforcement and gentle guidance.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌸</div>
+                    <h3 class="card-title">Gentle</h3>
+                    <p class="card-text">Soft colors, rounded corners, and calm animations create a stress-free learning environment.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3 class="card-title">Kawaii</h3>
+                    <p class="card-text">Cute cat mascots and playful elements make learning feel like spending time with a friendly companion.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Animate falling sakura petals
+        const sakuraPattern = document.getElementById('sakuraPattern');
+        const sakuraEmojis = ['🌸', '🌸', '🌸', '🌸', '🌸'];
+        
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.className = 'sakura';
+            sakura.textContent = sakuraEmojis[Math.floor(Math.random() * sakuraEmojis.length)];
+            sakura.style.left = Math.random() * 100 + '%';
+            sakura.style.animationDelay = Math.random() * 5 + 's';
+            sakura.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            sakuraPattern.appendChild(sakura);
+            
+            setTimeout(() => {
+                sakura.remove();
+            }, 10000);
+        }
+        
+        // Create initial sakura petals
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createSakura, i * 800);
+        }
+        
+        // Continue creating sakura petals
+        setInterval(createSakura, 2000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993ad014e42d854a',t:'MTc2MTMyMjk0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

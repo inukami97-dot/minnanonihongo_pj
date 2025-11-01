@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MinnanonihongoTestDemoApplication<minnanonihongo_test_demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.minnanonihongo_test_demo.MinnanonihongoTestDemoApplication",
+            "projectName": "minnanonihongo_test_demo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
